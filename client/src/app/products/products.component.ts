@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product/product.model'
+import { ProductService } from '../services/productService/product-service.service'
 
 @Component({
   selector: 'app-products',
@@ -7,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 	products = [];	
-	product = {
-		name: 'coton mask',
-		price: 9.99,
-		description: 'its good for protection from corona virus. It has been made from proof material',
-		img: ''
-	};
+	product = new Product(
+		'coton mask',
+		9.99,
+		'its good for protection from corona virus. It has been made from proof material',
+		''
+	);
 
-	constructor() {		
+	constructor(private productService: ProductService) {		
 		this.setProducts();
 	}
 
@@ -26,6 +28,8 @@ export class ProductsComponent implements OnInit {
 		for (let i = 0; i < 10; i++) {
 			this.products.push( this.product );
 		}
+
+		this.productService.fetch();
 	}
 
 }

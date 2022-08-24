@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+  	product: 'https://angular-webshop-dda47-default-rtdb.europe-west1.firebasedatabase.app/products.json'
+  }
 };
 
 /*
