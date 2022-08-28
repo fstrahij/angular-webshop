@@ -1,4 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+import { environment } from '../../../environments/environment';
+import { Product } from '../../models/product/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -6,9 +11,14 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   fetch(){
   	console.log('fetching data...');
+
+  	return this.http.get<Product[]>(environment.api.product)
+  		.pipe(map(products =>{
+  			return products;
+  		}));
   }
 }
