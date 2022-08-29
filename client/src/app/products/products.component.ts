@@ -8,13 +8,14 @@ import { ProductService } from '../services/productService/product-service.servi
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-	products: Product[] = [];	
+	products: Product[] = [];
+	isLoading = true;	
 
-	constructor(private productService: ProductService) {		
-		this.setProducts();
+	constructor(private productService: ProductService) {
 	}
 
-	ngOnInit(): void {
+	ngOnInit(): void {		
+		this.setProducts();
 	}
 
 	setProducts() {
@@ -23,6 +24,7 @@ export class ProductsComponent implements OnInit {
 			.subscribe(products =>{				
 				console.info('fetched products', products);
 				this.products = [ ...products ];
+				this.isLoading = false;
 			});
 	}
 
