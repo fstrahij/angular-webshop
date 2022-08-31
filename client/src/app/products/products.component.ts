@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product/product.model';
+
+import { Product } from '../models/product.model';
 import { ProductService } from '../services/productService/product-service.service';
 
 @Component({
@@ -27,5 +28,4 @@ export class ProductsComponent implements OnInit {
 				this.isLoading = false;
 			});
 	}
-
 }
