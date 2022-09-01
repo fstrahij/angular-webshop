@@ -8,7 +8,6 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 const routes: Routes = [
 	{
 		path: '',
-		component: ProductsComponent,
 		redirectTo: 'products',
 		pathMatch: 'full'
 	},
