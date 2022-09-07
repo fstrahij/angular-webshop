@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
 	{
 		path: 'products/:id',
 		component: ProductDetailsComponent
+	},
+	{
+		path: '**',
+		component: PageNotFoundComponent
 	}
 ];
 
