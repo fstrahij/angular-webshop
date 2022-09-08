@@ -21,8 +21,13 @@ const routes: Routes = [
 		component: ProductDetailsComponent
 	},
 	{
-		path: '**',
+		path: 'page-not-found',
 		component: PageNotFoundComponent
+	},
+	{
+		path: '**',
+		redirectTo: 'page-not-found',
+		pathMatch: 'full'
 	}
 ];
 
