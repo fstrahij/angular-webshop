@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProductsComponent } from './products/products.component';
-import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { ProductsComponent } from './views/products/products.component';
+import { ProductDetailsComponent } from './views/products/product-details/product-details.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 
