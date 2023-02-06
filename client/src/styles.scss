@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+$default-font-family:  Roboto, "Helvetica Neue", sans-serif;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: $default-font-family; }
+
+.mat-spinner-container {
+	position: relative;
+	height: calc(100vh - 64px);
+
+	.mat-spinner {
+		position: absolute;
+		margin: auto;
+		inset: 0;
+	}
+}

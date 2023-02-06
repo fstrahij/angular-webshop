@@ -1,29 +1,31 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Products</li>
-  </ol>
-</nav>
-
-<ng-container *ngIf="isLoading; else loadingFinish">	
-	<div class="spinner-border text-dark" role="status">
-	  	<span class="sr-only">Loading...</span>
-	</div>
+<ng-container *ngIf="isLoading; else loadingFinish">
+    <div class="mat-spinner-container">
+        <mat-spinner class="mat-spinner" mode="indeterminate"></mat-spinner>        
+    </div>
 </ng-container>
 
 <ng-template #loadingFinish>	
 	<div class="container">
-		<div class="row">
-			<div class="col-md-4" *ngFor="let product of products" >				
-				<div class="card">
-				  <img src="{{ product.img }}" class="card-img-top" alt="...">
-				  <div class="card-body">
-				    <h5 class="card-title">{{ product.name }} - {{ product.price }}$</h5>
-				    <p class="card-text">{{ product.description }}</p>
-				    <a class="btn btn-primary" [routerLink]="['/products', product.id]">More</a>
-				  </div>
-				</div>
-			</div>
-		</div>
+		<mat-grid-list cols="4" rowHeight="350px">
+			<mat-grid-tile *ngFor="let product of products" [colspan]="1" >				
+				<mat-card class="simple-cards" >
+					<img mat-card-image src="{{ product.img }}" alt="...">
+					<mat-card-header>
+						<mat-card-title>
+							{{ product.name }} - {{ product.price }}$
+						</mat-card-title>
+					</mat-card-header>
+
+					<mat-card-content>
+						<p>{{ product.description }}</p>
+					</mat-card-content>
+					
+					<mat-card-actions>
+						<a mat-button [routerLink]="['/products', product.id]">More</a>
+					</mat-card-actions>
+				</mat-card>
+			</mat-grid-tile>
+		</mat-grid-list>
+			
 	</div> 
 </ng-template>

@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ProductsComponent } from './views/products/products.component';
@@ -23,7 +24,8 @@ import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [
     {

@@ -6,7 +6,7 @@ import { ProductService } from '../../services/productService/product-service.se
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
 	products: Product[] = [];
@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
 			.fetch()
 			.subscribe(products =>{				
 				console.info('fetched products', products);
-				this.products = [ ...products ];
+				this.products = [ ...products, ...products ];
 				this.isLoading = false;
 			});
 	}
