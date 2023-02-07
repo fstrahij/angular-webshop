@@ -8,7 +8,7 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { ProductsComponent } from './views/products/products.component';
-import { ProductDetailsComponent } from './views/products/product-details/product-details.component';
+import { ProductDetailsComponent } from './views/product-details/product-details.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor';
 

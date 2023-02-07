@@ -6,10 +6,13 @@
 
 <ng-template #loadingFinish>	
 	<div class="container">
+
 		<mat-grid-list cols="4" rowHeight="350px">
-			<mat-grid-tile *ngFor="let product of products" [colspan]="1" >				
+			<mat-grid-tile *ngFor="let product of products; trackBy: trackByProducts" [colspan]="1" >				
 				<mat-card class="simple-cards" >
+					
 					<img mat-card-image src="{{ product.img }}" alt="...">
+
 					<mat-card-header>
 						<mat-card-title>
 							{{ product.name }} - {{ product.price }}$
@@ -23,6 +26,7 @@
 					<mat-card-actions>
 						<a mat-button [routerLink]="['/products', product.id]">More</a>
 					</mat-card-actions>
+
 				</mat-card>
 			</mat-grid-tile>
 		</mat-grid-list>
