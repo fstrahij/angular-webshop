@@ -11,6 +11,8 @@ import { ProductsComponent } from './views/products/products.component';
 import { ProductDetailsComponent } from './views/product-details/product-details.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor';
+import { LoadingDirective } from './shared/directives/loading/loading.directive';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { ErrorInterceptor } from './shared/interceptors/error/error.interceptor'
     NavbarComponent,
     ProductsComponent,
     ProductDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoaderComponent,
+    LoadingDirective,
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MaterialModule
   ],
   providers: [
     {

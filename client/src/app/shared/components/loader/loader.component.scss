@@ -1,0 +1,10 @@
+.mat-spinner-container {
+	position: relative;
+	height: calc(100vh - 64px);
+
+	.mat-spinner {
+		position: absolute;
+		margin: auto;
+		inset: 0;
+	}
+}
